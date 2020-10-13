@@ -1,27 +1,30 @@
-﻿<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<!------ Include the above in your HEAD tag ---------->
+﻿
+<html>
+    <head>
+        <link rel="stylesheet" href="~/css/login.css" />
+    </head>
+    <body>
+        <div class="wrapper fadeInDown">
+            <div id="formContent">
+                <!-- Tabs Titles -->
+                <!-- Icon -->
+                <div class="fadeIn first">
+                    <img src="~/􀉭.textClipping" id="icon" alt="User Icon" />
+                </div>
 
-<div class="wrapper fadeInDown">
-    <div id="formContent">
-        <!-- Tabs Titles -->
-        <!-- Icon -->
-        <div class="fadeIn first">
-            <img src="http://danielzawadzki.com/codepen/01/icon.svg" id="icon" alt="User Icon" />
+                <!-- Login Form -->
+                <form asp-action="Login" asp-controller="User" method="post">
+                    <input type="text" name="email" class="fadeIn second" placeholder="Email">
+                    <input type="text" name="password" class="fadeIn third" placeholder="Password">
+                    <input type="submit" class="fadeIn fourth" value="Log In">
+                </form>
+
+                <!-- Remind Passowrd -->
+                <div id="formFooter">
+                    <a class="underlineHover" href="#">Forgot Password?</a>
+                </div>
+
+            </div>
         </div>
-
-        <!-- Login Form -->
-        <form asp-action="Login" asp-controller="User" method="post">
-            <input type="text" name="email" class="fadeIn second"  placeholder="Email">
-            <input type="text" name="password" class="fadeIn third" placeholder="Password">
-            <input type="submit" class="fadeIn fourth" value="Log In">
-        </form>
-
-        <!-- Remind Passowrd -->
-        <div id="formFooter">
-            <a class="underlineHover" href="#">Forgot Password?</a>
-        </div>
-
-    </div>
-</div>
+    </body>
+</html>

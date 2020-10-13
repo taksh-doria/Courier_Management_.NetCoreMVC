@@ -30,6 +30,9 @@ namespace Courier_Management_System
                     options.UseSqlite(Configuration.GetConnectionString("usercontext")));
             services.AddDistributedMemoryCache();
             services.AddSession();
+
+            services.AddDbContext<DetailsContext>(options =>
+                    options.UseSqlite(Configuration.GetConnectionString("DetailsContext")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

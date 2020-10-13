@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Courier_Management_System.Migrations
 {
     [DbContext(typeof(UserContext))]
-    [Migration("20201012092933_InitialCreate")]
+    [Migration("20201013055934_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
