@@ -134,7 +134,7 @@ namespace Courier_Management_System.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> SignUpAsync(String email,String name,String password,String city,String phone_no)
+        public async Task<IActionResult> SignUpAsync(String email,String name,String password,String city,String phone_no,String address)
         {
             User U = new User();
             Console.Write(email + ":" + name + ":" + city + ":" + phone_no);
@@ -145,6 +145,7 @@ namespace Courier_Management_System.Controllers
             U.password = password;
             U.role = "client";
             U.phone_no = phone_no;
+            U.address = address;
             if (ModelState.IsValid)
             {
                 _context.Add(U);

@@ -14,7 +14,7 @@
         "outputPath": "/Users/takshdoria/Desktop/Courier_Management_.NetCoreMVC/Courier_Management_System/Courier_Management_System/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/takshdoria/.config/NuGet/NuGet.Config"
+          "/Users/takshdoria/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"

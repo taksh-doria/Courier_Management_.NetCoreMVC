@@ -121,7 +121,15 @@
                             </select>
                             <span asp-validation-for="city" class="text-danger"></span>
                         </div>.
-
+                        <div class="input-group col-lg-6 mb-4">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text bg-white px-4 border-md border-right-0">
+                                    <i class="fa fa-user text-muted"></i>
+                                </span>
+                            </div>
+                           <textarea id="Name" type="" name="address" placeholder="Address" class="form-control bg-white border-left-0 border-md" asp-for="name" rows="3" cols="50"></textarea>
+                            <span asp-validation-for="address" class="text-danger"></span>
+                        </div>
 
                         <!-- Job -->
                         <!-- Password -->
@@ -147,13 +155,12 @@
 
                         <!-- Submit Button -->
                         <div class="form-group col-lg-12 mx-auto mb-0">
-                            <input type="submit" class="btn btn-primary btn-block py-2">
-                                <span class="font-weight-bold">Create your account</span>
+                            <input type="submit" class="btn btn-primary btn-block py-2" value="Create your account">
                             </input>
                         </div>
                         <!-- Already Registered -->
                         <div class="text-center w-100">
-                            <p class="text-muted font-weight-bold">Already Registered? <a href="#" class="text-primary ml-2">Login</a></p>
+                            <p class="text-muted font-weight-bold">Already Registered? <a href="/User/Login" class="text-primary ml-2">Login</a></p>
                         </div>
                     </div>
                 </form>

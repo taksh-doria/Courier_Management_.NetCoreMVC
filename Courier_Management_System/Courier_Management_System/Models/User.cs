@@ -12,6 +12,7 @@ namespace Courier_Management_System.Models
         public String name { get; set; }
         public String phone_no { get; set; }
         public String city { get; set; }
+        public String address { get; set; }
         public String role { get; set; }
     }
 }

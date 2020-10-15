@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Courier_Management_System.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -33,6 +34,10 @@ namespace Courier_Management_System
 
             services.AddDbContext<DetailsContext>(options =>
                     options.UseSqlite(Configuration.GetConnectionString("DetailsContext")));
+
+            services.AddDbContext<StatusContext>(options =>
+                    options.UseSqlite(Configuration.GetConnectionString("StatusContext")));
+            services.AddSingleton<IHttpContextAccessor,HttpContextAccessor>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
