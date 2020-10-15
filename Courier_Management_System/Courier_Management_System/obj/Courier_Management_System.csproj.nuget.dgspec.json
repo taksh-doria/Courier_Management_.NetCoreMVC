@@ -14,7 +14,7 @@
         "outputPath": "/Users/takshdoria/Desktop/Courier_Management_.NetCoreMVC/Courier_Management_System/Courier_Management_System/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/takshdoria/.nuget/NuGet/NuGet.Config"
+          "/Users/takshdoria/.config/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
@@ -57,6 +57,10 @@
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
               "version": "[3.1.4, )"
+            },
+            "NETCore.MailKit": {
+              "target": "Package",
+              "version": "[2.0.3, )"
             },
             "bootstrap": {
               "target": "Package",

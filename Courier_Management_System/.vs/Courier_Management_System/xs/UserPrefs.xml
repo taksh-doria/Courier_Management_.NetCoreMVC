@@ -1,15 +1,11 @@
 ﻿<Properties StartupConfiguration="{E1753674-2A98-4011-8A77-94F331D53010}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Courier_Management_System/Startup.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Courier_Management_System/Views/Shared/_Layout.cshtml">
     <Files>
-      <File FileName="Courier_Management_System/Models/Consignment_Status.cs" Line="16" Column="1" />
-      <File FileName="Courier_Management_System/Models/Consignment_Details.cs" Line="17" Column="43" />
-      <File FileName="Courier_Management_System/Models/User.cs" Line="15" Column="44" />
-      <File FileName="Courier_Management_System/Views/User/SignUp.cshtml" Line="158" Column="117" />
-      <File FileName="Courier_Management_System/Controllers/UserController.cs" Line="173" Column="71" />
-      <File FileName="Courier_Management_System/appsettings.json" Line="13" Column="41" />
-      <File FileName="Courier_Management_System/Views/Shared/_Layout.cshtml" Line="40" Column="34" />
-      <File FileName="Courier_Management_System/Startup.cs" Line="40" Column="75" />
-      <File FileName="Courier_Management_System/Program.cs" Line="16" Column="1" />
+      <File FileName="Courier_Management_System/Controllers/UserController.cs" Line="81" Column="50" />
+      <File FileName="Courier_Management_System/Views/User/Index.cshtml" Line="44" Column="27" />
+      <File FileName="Courier_Management_System/Controllers/ConsignmentController.cs" Line="1" Column="1" />
+      <File FileName="Courier_Management_System/Views/Consignment/Index.cshtml" Line="50" Column="18" />
+      <File FileName="Courier_Management_System/Views/Shared/_Layout.cshtml" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -18,12 +14,16 @@
             <Node name="Courier_Management_System" expanded="True">
               <Node name="Dependencies" expanded="True" />
               <Node name="Controllers" expanded="True" />
-              <Node name="Data" expanded="True" />
-              <Node name="Models" expanded="True" />
               <Node name="Views" expanded="True">
-                <Node name="Shared" expanded="True" />
+                <Node name="Consignment" expanded="True" />
+                <Node name="Shared" expanded="True">
+                  <Node name="_Layout.cshtml" selected="True" />
+                </Node>
+                <Node name="User" expanded="True" />
               </Node>
-              <Node name="Startup.cs" selected="True" />
+              <Node name="wwwroot" expanded="True">
+                <Node name="css" expanded="True" />
+              </Node>
             </Node>
           </Node>
         </State>

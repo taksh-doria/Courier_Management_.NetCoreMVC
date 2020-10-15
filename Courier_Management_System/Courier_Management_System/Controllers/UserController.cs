@@ -18,115 +18,6 @@ namespace Courier_Management_System.Controllers
         {
             _context = context;
         }
-
-        // GET: User
-        public async Task<IActionResult> Index()
-        {
-            return View(await _context.users.ToListAsync());
-        }
-
-        // GET: User/Details/5
-        public async Task<IActionResult> Details(long? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var user = await _context.users
-                .FirstOrDefaultAsync(m => m.id == id);
-            if (user == null)
-            {
-                return NotFound();
-            }
-
-            return View(user);
-        }
-        // GET: User/Edit/5
-        public async Task<IActionResult> Edit(long? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var user = await _context.users.FindAsync(id);
-            if (user == null)
-            {
-                return NotFound();
-            }
-            return View(user);
-        }
-
-        // POST: User/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
-        // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(long id, [Bind("id,email,password,name,phone_no,city,role")] User user)
-        {
-            if (id != user.id)
-            {
-                return NotFound();
-            }
-
-            if (ModelState.IsValid)
-            {
-                try
-                {
-                    _context.Update(user);
-                    await _context.SaveChangesAsync();
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!UserExists(user.id))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
-                }
-                return RedirectToAction(nameof(Index));
-            }
-            return View(user);
-        }
-
-        // GET: User/Delete/5
-        public async Task<IActionResult> Delete(long? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var user = await _context.users
-                .FirstOrDefaultAsync(m => m.id == id);
-            if (user == null)
-            {
-                return NotFound();
-            }
-
-            return View(user);
-        }
-
-        // POST: User/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(long id)
-        {
-            var user = await _context.users.FindAsync(id);
-            _context.users.Remove(user);
-            await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
-        }
-
-        private bool UserExists(long id)
-        {
-            return _context.users.Any(e => e.id == id);
-        }
-
         public IActionResult SignUp()
         {
             return View();
@@ -169,13 +60,36 @@ namespace Courier_Management_System.Controllers
             if(user!=null)
             {
                 HttpContext.Session.SetString("logged_in_user",user.email);
+                HttpContext.Session.SetString("user", user.role);
                 ViewBag.session = HttpContext.Session.GetString("logged_in_user");
                 Console.WriteLine("stored variable "+ViewBag.session);
-                return Redirect("/Home/Index");
+                return Redirect("/User/Profile/");
             }
             return View(user);
         }
 
+
+
+        public async Task<IActionResult> Profile()
+        {
+            if(HttpContext.Session.GetString("logged_in_user")!=null)
+            {
+               var user = await _context.users
+                    .FirstOrDefaultAsync(m => m.email == HttpContext.Session.GetString("logged_in_user"));
+                    Console.WriteLine(user.name);
+                return View(user);
+            }
+            else
+            {
+                return Redirect("/User/Signup");
+            }
+        }
+
+        public IActionResult LogOut()
+        {
+            HttpContext.Session.Clear();
+            return Redirect("/Home/Index");
+        }
         
     }
 }

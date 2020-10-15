@@ -167,11 +167,6 @@
 /Users/takshdoria/Desktop/Courier_Management_.NetCoreMVC/Courier_Management_System/Courier_Management_System/obj/Debug/netcoreapp3.1/Courier_Management_System.dll
 /Users/takshdoria/Desktop/Courier_Management_.NetCoreMVC/Courier_Management_System/Courier_Management_System/obj/Debug/netcoreapp3.1/Courier_Management_System.pdb
 /Users/takshdoria/Desktop/Courier_Management_.NetCoreMVC/Courier_Management_System/Courier_Management_System/obj/Debug/netcoreapp3.1/Courier_Management_System.genruntimeconfig.cache
-/Users/takshdoria/Desktop/Courier_Management_.NetCoreMVC/Courier_Management_System/Courier_Management_System/obj/Debug/netcoreapp3.1/Razor/Views/User/Create.cshtml.g.cs
-/Users/takshdoria/Desktop/Courier_Management_.NetCoreMVC/Courier_Management_System/Courier_Management_System/obj/Debug/netcoreapp3.1/Razor/Views/User/Delete.cshtml.g.cs
-/Users/takshdoria/Desktop/Courier_Management_.NetCoreMVC/Courier_Management_System/Courier_Management_System/obj/Debug/netcoreapp3.1/Razor/Views/User/Details.cshtml.g.cs
-/Users/takshdoria/Desktop/Courier_Management_.NetCoreMVC/Courier_Management_System/Courier_Management_System/obj/Debug/netcoreapp3.1/Razor/Views/User/Edit.cshtml.g.cs
-/Users/takshdoria/Desktop/Courier_Management_.NetCoreMVC/Courier_Management_System/Courier_Management_System/obj/Debug/netcoreapp3.1/Razor/Views/User/Index.cshtml.g.cs
 /Users/takshdoria/Desktop/Courier_Management_.NetCoreMVC/Courier_Management_System/Courier_Management_System/obj/Debug/netcoreapp3.1/Razor/Views/User/SignUp.cshtml.g.cs
 /Users/takshdoria/Desktop/Courier_Management_.NetCoreMVC/Courier_Management_System/Courier_Management_System/obj/Debug/netcoreapp3.1/Razor/Views/User/Login.cshtml.g.cs
 /Users/takshdoria/Desktop/Courier_Management_.NetCoreMVC/Courier_Management_System/Courier_Management_System/obj/Debug/netcoreapp3.1/Razor/Views/Consignment/Create.cshtml.g.cs
@@ -184,3 +179,8 @@
 /Users/takshdoria/Desktop/Courier_Management_.NetCoreMVC/Courier_Management_System/Courier_Management_System/obj/Debug/netcoreapp3.1/Razor/Views/Status/Details.cshtml.g.cs
 /Users/takshdoria/Desktop/Courier_Management_.NetCoreMVC/Courier_Management_System/Courier_Management_System/obj/Debug/netcoreapp3.1/Razor/Views/Status/Edit.cshtml.g.cs
 /Users/takshdoria/Desktop/Courier_Management_.NetCoreMVC/Courier_Management_System/Courier_Management_System/obj/Debug/netcoreapp3.1/Razor/Views/Status/Index.cshtml.g.cs
+/Users/takshdoria/Desktop/Courier_Management_.NetCoreMVC/Courier_Management_System/Courier_Management_System/obj/Debug/netcoreapp3.1/Razor/Views/User/Profile.cshtml.g.cs
+/Users/takshdoria/Desktop/Courier_Management_.NetCoreMVC/Courier_Management_System/Courier_Management_System/bin/Debug/netcoreapp3.1/MailKit.dll
+/Users/takshdoria/Desktop/Courier_Management_.NetCoreMVC/Courier_Management_System/Courier_Management_System/bin/Debug/netcoreapp3.1/MimeKit.dll
+/Users/takshdoria/Desktop/Courier_Management_.NetCoreMVC/Courier_Management_System/Courier_Management_System/bin/Debug/netcoreapp3.1/NETCore.MailKit.dll
+/Users/takshdoria/Desktop/Courier_Management_.NetCoreMVC/Courier_Management_System/Courier_Management_System/bin/Debug/netcoreapp3.1/BouncyCastle.Crypto.dll
