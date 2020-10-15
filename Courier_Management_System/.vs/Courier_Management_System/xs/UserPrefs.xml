@@ -1,24 +1,22 @@
 ﻿<Properties StartupConfiguration="{E1753674-2A98-4011-8A77-94F331D53010}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Courier_Management_System/Views/Shared/_Layout.cshtml">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Courier_Management_System/Views/User/Profile.cshtml">
     <Files>
-      <File FileName="Courier_Management_System/Controllers/UserController.cs" Line="81" Column="50" />
-      <File FileName="Courier_Management_System/Views/User/Index.cshtml" Line="44" Column="27" />
+      <File FileName="Courier_Management_System/Controllers/UserController.cs" Line="91" Column="44" />
+      <File FileName="Courier_Management_System/Views/User/Index.cshtml" Line="112" Column="25" />
       <File FileName="Courier_Management_System/Controllers/ConsignmentController.cs" Line="1" Column="1" />
       <File FileName="Courier_Management_System/Views/Consignment/Index.cshtml" Line="50" Column="18" />
-      <File FileName="Courier_Management_System/Views/Shared/_Layout.cshtml" Line="1" Column="1" />
+      <File FileName="Courier_Management_System/Views/Shared/_Layout.cshtml" Line="35" Column="119" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Courier_Management_System" expanded="True">
             <Node name="Courier_Management_System" expanded="True">
-              <Node name="Dependencies" expanded="True" />
+              <Node name="Dependencies" expanded="True" selected="True" />
               <Node name="Controllers" expanded="True" />
               <Node name="Views" expanded="True">
                 <Node name="Consignment" expanded="True" />
-                <Node name="Shared" expanded="True">
-                  <Node name="_Layout.cshtml" selected="True" />
-                </Node>
+                <Node name="Shared" expanded="True" />
                 <Node name="User" expanded="True" />
               </Node>
               <Node name="wwwroot" expanded="True">
