@@ -2,14 +2,16 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Courier_Management_System.Migrations.Details
 {
     [DbContext(typeof(DetailsContext))]
-    partial class DetailsContextModelSnapshot : ModelSnapshot
+    [Migration("20201017145357_ConsignmantMigration")]
+    partial class ConsignmantMigration
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -29,9 +31,6 @@ namespace Courier_Management_System.Migrations.Details
 
                     b.Property<float>("amount")
                         .HasColumnType("REAL");
-
-                    b.Property<long>("consignment_no")
-                        .HasColumnType("INTEGER");
 
                     b.Property<DateTime>("date")
                         .HasColumnType("TEXT");

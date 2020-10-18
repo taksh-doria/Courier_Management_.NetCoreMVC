@@ -8,6 +8,8 @@ namespace Courier_Management_System.Models
         [Key]
         public Int64 pkg_id { get; set; }
 
+        public Int64 consignment_no { get; set; }
+
         public String user { get; set; }
 
         public String consignee_name { get; set; }

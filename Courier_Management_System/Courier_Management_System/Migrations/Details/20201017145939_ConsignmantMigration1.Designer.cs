@@ -2,14 +2,16 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Courier_Management_System.Migrations.Details
 {
     [DbContext(typeof(DetailsContext))]
-    partial class DetailsContextModelSnapshot : ModelSnapshot
+    [Migration("20201017145939_ConsignmantMigration1")]
+    partial class ConsignmantMigration1
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

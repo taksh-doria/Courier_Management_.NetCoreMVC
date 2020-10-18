@@ -7,16 +7,18 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Courier_Management_System.Models;
 using Microsoft.AspNetCore.Http;
+using Courier_Management_System.Data;
 
 namespace Courier_Management_System.Controllers
 {
     public class UserController : Controller
     {
         private readonly UserContext _context;
-
-        public UserController(UserContext context)
+        private readonly IHttpContextAccessor _accessor;
+        public UserController(UserContext context, IHttpContextAccessor accessor)
         {
             _context = context;
+            _accessor = accessor;
         }
         public IActionResult SignUp()
         {
@@ -60,7 +62,7 @@ namespace Courier_Management_System.Controllers
             if(user!=null)
             {
                 HttpContext.Session.SetString("logged_in_user",user.email);
-                HttpContext.Session.SetString("user", user.role);
+                HttpContext.Session.SetString("user_role", user.role);
                 ViewBag.session = HttpContext.Session.GetString("logged_in_user");
                 Console.WriteLine("stored variable "+ViewBag.session);
                 return Redirect("/User/Profile/");
@@ -72,7 +74,7 @@ namespace Courier_Management_System.Controllers
 
         public async Task<IActionResult> Profile()
         {
-            if(HttpContext.Session.GetString("logged_in_user")!=null)
+            if(new Utility(this._accessor).IsAuthorisedClient()==true)
             {
                var user = await _context.users
                     .FirstOrDefaultAsync(m => m.email == HttpContext.Session.GetString("logged_in_user"));

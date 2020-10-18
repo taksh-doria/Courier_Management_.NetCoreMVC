@@ -77,7 +77,7 @@
                                     <i class="fa fa-user text-muted"></i>
                                 </span>
                             </div>
-                            <input id="Name" type="text" name="name" placeholder="Name" class="form-control bg-white border-left-0 border-md" asp-for="name">
+                            <input id="Name" type="text" name="name" placeholder="Name" class="form-control bg-white border-left-0 border-md" asp-for="name" required>
                             <span asp-validation-for="email" class="text-danger"></span>
                         </div>
                         <!-- Email Address -->
@@ -87,7 +87,7 @@
                                     <i class="fa fa-envelope text-muted"></i>
                                 </span>
                             </div>
-                            <input id="email" type="email" name="email" placeholder="Email Address" class="form-control bg-white border-left-0 border-md" asp-for="email">
+                            <input id="email" type="email" name="email" placeholder="Email Address" class="form-control bg-white border-left-0 border-md" asp-for="email" required>
                             <span asp-validation-for="email" class="text-danger"></span>
 
                         </div>
@@ -102,7 +102,7 @@
                             <select id="countryCode" name="countryCode" style="max-width: 80px" class="custom-select form-control bg-white border-left-0 border-md h-100 font-weight-bold text-muted">
                                 <option value="">+91</option>
                             </select>
-                            <input id="phoneNumber" type="tel" name="phone_no" placeholder="Phone Number" class="form-control bg-white border-md border-left-0 pl-3" asp-for="phone_no">
+                            <input id="phoneNumber" type="tel" name="phone_no" placeholder="Phone Number" class="form-control bg-white border-md border-left-0 pl-3" asp-for="phone_no" required>
                             <span asp-validation-for="phone_no" class="text-danger"></span>
                         </div>
                         <div class="input-group col-lg-12 mb-4">
@@ -127,7 +127,7 @@
                                     <i class="fa fa-user text-muted"></i>
                                 </span>
                             </div>
-                           <textarea id="Name" type="" name="address" placeholder="Address" class="form-control bg-white border-left-0 border-md" asp-for="name" rows="3" cols="50"></textarea>
+                           <textarea id="Name" type="" name="address" placeholder="Address" class="form-control bg-white border-left-0 border-md" asp-for="name" rows="3" cols="50" required maxlength="20"></textarea>
                             <span asp-validation-for="address" class="text-danger"></span>
                         </div>
 
@@ -139,7 +139,7 @@
                                     <i class="fa fa-lock text-muted"></i>
                                 </span>
                             </div>
-                            <input id="password" type="password" name="password" placeholder="Password" class="form-control bg-white border-left-0 border-md" asp-for="password">
+                            <input id="password" type="password" name="password" placeholder="Password" class="form-control bg-white border-left-0 border-md" asp-for="password" required>
                             <span asp-validation-for="password" class="text-danger"></span>
                         </div>
 
@@ -150,7 +150,7 @@
                                     <i class="fa fa-lock text-muted"></i>
                                 </span>
                             </div>
-                            <input id="passwordConfirmation" type="password" name="passwordConfirmation" placeholder="Confirm Password" class="form-control bg-white border-left-0 border-md">
+                            <input id="passwordConfirmation" type="password" name="passwordConfirmation" placeholder="Confirm Password" class="form-control bg-white border-left-0 border-md" required>
                         </div>
 
                         <!-- Submit Button -->

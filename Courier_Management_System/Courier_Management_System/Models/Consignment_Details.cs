@@ -6,7 +6,8 @@ namespace Courier_Management_System.Models
     {
         [Key]
         public Int64 ID {get; set;}
-
+        public Int64 consignment_no { get; set; }
+        public String package_content { get; set; }
         public String user { get; set; }
         public String package_type { get; set; }
         public DateTime date { get; set; }

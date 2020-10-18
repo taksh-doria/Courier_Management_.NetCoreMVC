@@ -11,11 +11,14 @@
                 <div class="fadeIn first">
                     <img src="~/􀉭.textClipping" id="icon" alt="User Icon" />
                 </div>
-
+                <br/>
                 <!-- Login Form -->
                 <form asp-action="Login" asp-controller="User" method="post">
-                    <input type="text" name="email" class="fadeIn second" placeholder="Email">
-                    <input type="text" name="password" class="fadeIn third" placeholder="Password">
+                    <input type="email" name="email" class="fadeIn fourth" placeholder="Email" style="width: 50%;"/>
+                    <br/>
+                    <br/>
+                    <input type="password" name="password" class="fadeIn fourth" placeholder="Password" style="width: 50%">
+                    <br/>
                     <input type="submit" class="fadeIn fourth" value="Log In">
                 </form>
 

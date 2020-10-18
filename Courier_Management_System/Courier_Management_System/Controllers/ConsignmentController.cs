@@ -6,16 +6,20 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Courier_Management_System.Models;
+using Microsoft.AspNetCore.Http;
+using Courier_Management_System.Data;
 
 namespace Courier_Management_System.Controllers
 {
     public class ConsignmentController : Controller
     {
         private readonly DetailsContext _context;
+        private readonly IHttpContextAccessor _accessor;
 
-        public ConsignmentController(DetailsContext context)
+        public ConsignmentController(DetailsContext context,IHttpContextAccessor accessor)
         {
             _context = context;
+            _accessor = accessor;
         }
 
         // GET: Consignment
@@ -45,7 +49,16 @@ namespace Courier_Management_System.Controllers
         // GET: Consignment/Create
         public IActionResult Create()
         {
-            return View();
+            Boolean value=new Utility(this._accessor).IsAuthorisedClient();
+            Console.WriteLine("here "+value);
+            if (value==false)
+            {
+                return Redirect("/User/Login");
+            }
+            else
+            {
+                return View();
+            }
         }
 
         // POST: Consignment/Create
@@ -53,15 +66,19 @@ namespace Courier_Management_System.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ID,user,package_type,date,destination_city,Consignee_name,address,pkg_weight_in_grams,amount")] Consignment_Details consignment_Details)
+        public async Task<IActionResult> Create(string date,String consigner_na,String destination_city,String address,int pkg_weight_in_grams)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(consignment_Details);
+                //_context.Add(consignment_Details);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                // return RedirectToAction(nameof(Index));
+                return Redirect("/User/Profile");
             }
-            return View(consignment_Details);
+            else
+            {
+                return Redirect("/User/Profile");
+            }
         }
 
         // GET: Consignment/Edit/5
