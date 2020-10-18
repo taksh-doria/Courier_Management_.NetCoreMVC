@@ -1,23 +1,14 @@
 @{ ViewData["Title"] = "Create"; }
 
 <h1>New Consignment</h1>
-<link href="https://cdn.rawgit.com/Eonasdan/bootstrap-datetimepicker/e8bddc60e73c1ec2475f827be36e1957af72e2ea/build/css/bootstrap-datetimepicker.css" rel="stylesheet">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment-with-locales.js"></script>
-<script src="https://cdn.rawgit.com/Eonasdan/bootstrap-datetimepicker/e8bddc60e73c1ec2475f827be36e1957af72e2ea/src/js/bootstrap-datetimepicker.js"></script>
-
 <h4>Consignment Details</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form class="form-inline" method="post" asp-controller="Consignment" asp-action="Create">
-            <label for="dtpickerdemo" class="col-sm-2 control-label">Select date/time:</label>
-
-            <div class='col-sm-4 input-group date'>
-                <input type='datetime' class="form-control" id='date' />
-            </div>
+        <form class="form-horizontal" method="post" asp-controller="Consignment" asp-action="Create">
             <div class="form-group">
                 <label for="package_type">Courier Type:</label>
-                <Select class="form-control" id="package_type">
+                <Select class="form-control" name="package_type">
                     <option value="SCs">Standard Courier services</option>
                     <option value="ROD">Rush and On-Demand</option>
                     <option value="PSW">Pallet Shipments and Warehousing</option>
@@ -26,11 +17,11 @@
             </div>
             <div class="form-group">
                 <label for="package_content">Package Content:</label>
-                <input type="text" class="form-control" id="package_content" required>
+                <input type="text" class="form-control" name="package_content" required>
             </div>
             <div class="form-group">
                 <label for="package_content">Reciver's Name:</label>
-                <input type="text" class="form-control" id="connsignee_name" required>
+                <input type="text" class="form-control" name="consignee_name" required>
             </div>
             <div class="form-group">
                 <label for="destination_city">Destination City:</label>
@@ -44,28 +35,18 @@
                 </select>
             </div>
             <div class="form-group">
-                <textarea type="text" class="form-control" id="address" required placeholder="Address" rows="7" cols="20"></textarea>
+                <textarea type="text" class="form-control" name="address" required placeholder="Address" rows="7" cols="20"></textarea>
             </div>
             <div class="form-group">
-                <label for="pkg_weight_in_grams">Package Weight in Kilograms:</label>
-                <input type="number" class="form-control" id="package_content" required>
+                <label for="pkg_weight_in_grams">Package Weight in Grams:</label>
+                <input type="number" class="form-control" name="pkg_weight_in_grams" required>
             </div>
             <div class="form-group">
                 <input type="submit" class="btn btn-primary" value="Add Consignment" />
             </div>
         </form>
-        <script>
-            $(function () {
-                $('#date').datetimepicker();
-            });
-        </script>
     </div>
 </div>
-
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
-
 @section Scripts {
     @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
     

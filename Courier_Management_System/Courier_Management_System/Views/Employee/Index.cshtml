@@ -1,0 +1,65 @@
+@model IEnumerable<Courier_Management_System.Models.Employee>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.emp_name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.emp_role)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.emp_address)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.emp_city)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.emp_email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.emp_password)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.emp_name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.emp_role)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.emp_address)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.emp_city)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.emp_email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.emp_password)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.emp_id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.emp_id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.emp_id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

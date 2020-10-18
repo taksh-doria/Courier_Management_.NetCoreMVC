@@ -38,6 +38,12 @@ namespace Courier_Management_System
             services.AddDbContext<StatusContext>(options =>
                     options.UseSqlite(Configuration.GetConnectionString("StatusContext")));
             services.AddSingleton<IHttpContextAccessor,HttpContextAccessor>();
+
+            services.AddDbContext<EmployeeContext>(options =>
+                    options.UseSqlite(Configuration.GetConnectionString("EmployeeContext")));
+
+            services.AddDbContext<CityContext>(options =>
+                    options.UseSqlite(Configuration.GetConnectionString("CityContext")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

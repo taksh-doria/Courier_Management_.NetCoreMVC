@@ -66,13 +66,22 @@ namespace Courier_Management_System.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create(string date,String consigner_na,String destination_city,String address,int pkg_weight_in_grams)
+        public async Task<IActionResult> Create(String consignee_name,String city,String address,int pkg_weight_in_grams,String package_type,String package_content)
         {
+            Consignment_Details details = new Consignment_Details();
+            details.date = DateTime.Now;
+            details.Consignee_name = consignee_name;
+            details.destination_city =city;
+            details.address = address;
+            details.package_type = package_type;
+            details.pkg_weight_in_grams = pkg_weight_in_grams;
+            details.user = _accessor.HttpContext.Session.GetString("logged_in_user");
+            details.package_content = package_content;
+            details.amount = 600.0F;
             if (ModelState.IsValid)
             {
-                //_context.Add(consignment_Details);
+                _context.Add(details);
                 await _context.SaveChangesAsync();
-                // return RedirectToAction(nameof(Index));
                 return Redirect("/User/Profile");
             }
             else
@@ -80,7 +89,6 @@ namespace Courier_Management_System.Controllers
                 return Redirect("/User/Profile");
             }
         }
-
         // GET: Consignment/Edit/5
         public async Task<IActionResult> Edit(long? id)
         {

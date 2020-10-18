@@ -10,7 +10,6 @@ namespace Courier_Management_System.Data
         {
             this._accessor = accessor;
         }
-
         public Boolean IsAuthorisedClient()
         {
             Console.WriteLine(this._accessor.HttpContext.Session.GetString("logged_in_user") + ":" + this._accessor.HttpContext.Session.GetString("user_role"));
@@ -29,4 +28,5 @@ namespace Courier_Management_System.Data
             return false;
         }
     }
+
 }

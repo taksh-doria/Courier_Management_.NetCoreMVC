@@ -1,0 +1,47 @@
+@model IEnumerable<Courier_Management_System.Models.City>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.State)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.city_pincode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.branch_address)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.State)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.city_pincode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.branch_address)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.city_name">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.city_name">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.city_name">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
