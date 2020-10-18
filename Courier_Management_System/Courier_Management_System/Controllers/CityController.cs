@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Courier_Management_System.Models;
 
-namespace Courier_Management_System.Views
+namespace Courier_Management_System.Controllers
 {
     public class CityController : Controller
     {

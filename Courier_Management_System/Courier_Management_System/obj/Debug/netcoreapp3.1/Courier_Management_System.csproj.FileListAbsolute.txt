@@ -189,3 +189,8 @@
 /Users/takshdoria/Desktop/Courier_Management_.NetCoreMVC/Courier_Management_System/Courier_Management_System/obj/Debug/netcoreapp3.1/Razor/Views/Employee/Details.cshtml.g.cs
 /Users/takshdoria/Desktop/Courier_Management_.NetCoreMVC/Courier_Management_System/Courier_Management_System/obj/Debug/netcoreapp3.1/Razor/Views/Employee/Edit.cshtml.g.cs
 /Users/takshdoria/Desktop/Courier_Management_.NetCoreMVC/Courier_Management_System/Courier_Management_System/obj/Debug/netcoreapp3.1/Razor/Views/Employee/Index.cshtml.g.cs
+/Users/takshdoria/Desktop/Courier_Management_.NetCoreMVC/Courier_Management_System/Courier_Management_System/obj/Debug/netcoreapp3.1/Razor/Views/City/Create.cshtml.g.cs
+/Users/takshdoria/Desktop/Courier_Management_.NetCoreMVC/Courier_Management_System/Courier_Management_System/obj/Debug/netcoreapp3.1/Razor/Views/City/Delete.cshtml.g.cs
+/Users/takshdoria/Desktop/Courier_Management_.NetCoreMVC/Courier_Management_System/Courier_Management_System/obj/Debug/netcoreapp3.1/Razor/Views/City/Details.cshtml.g.cs
+/Users/takshdoria/Desktop/Courier_Management_.NetCoreMVC/Courier_Management_System/Courier_Management_System/obj/Debug/netcoreapp3.1/Razor/Views/City/Edit.cshtml.g.cs
+/Users/takshdoria/Desktop/Courier_Management_.NetCoreMVC/Courier_Management_System/Courier_Management_System/obj/Debug/netcoreapp3.1/Razor/Views/City/Index.cshtml.g.cs
