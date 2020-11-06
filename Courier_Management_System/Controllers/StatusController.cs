@@ -6,14 +6,15 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Courier_Management_System.Models;
+using DataContext = Courier_Management_System.Models.DataContext;
 
 namespace Courier_Management_System.Controllers
 {
     public class StatusController : Controller
     {
-        private readonly StatusContext _context;
+        private readonly DataContext _context;
 
-        public StatusController(StatusContext context)
+        public StatusController(DataContext context)
         {
             _context = context;
         }

@@ -6,14 +6,15 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Courier_Management_System.Models;
+using DataContext = Courier_Management_System.Models.DataContext;
 
 namespace Courier_Management_System.Controllers
 {
     public class CityController : Controller
     {
-        private readonly CityContext _context;
+        private readonly DataContext _context;
 
-        public CityController(CityContext context)
+        public CityController(DataContext context)
         {
             _context = context;
         }

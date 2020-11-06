@@ -11,6 +11,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using DataContext = Courier_Management_System.Models.DataContext;
 
 namespace Courier_Management_System
 {
@@ -27,23 +28,13 @@ namespace Courier_Management_System
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
-            services.AddDbContext<UserContext>(options =>
-                    options.UseSqlite(Configuration.GetConnectionString("usercontext")));
+            services.AddMvc()
+        .AddSessionStateTempDataProvider();
             services.AddDistributedMemoryCache();
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddSession();
-
-            services.AddDbContext<DetailsContext>(options =>
-                    options.UseSqlite(Configuration.GetConnectionString("DetailsContext")));
-
-            services.AddDbContext<StatusContext>(options =>
-                    options.UseSqlite(Configuration.GetConnectionString("StatusContext")));
-            services.AddSingleton<IHttpContextAccessor,HttpContextAccessor>();
-
-            services.AddDbContext<EmployeeContext>(options =>
-                    options.UseSqlite(Configuration.GetConnectionString("EmployeeContext")));
-
-            services.AddDbContext<CityContext>(options =>
-                    options.UseSqlite(Configuration.GetConnectionString("CityContext")));
+            services.AddDbContext<DataContext>(options =>
+                    options.UseSqlite(Configuration.GetConnectionString("DataContext")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

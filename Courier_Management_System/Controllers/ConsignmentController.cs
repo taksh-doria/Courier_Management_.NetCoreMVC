@@ -8,15 +8,16 @@ using Microsoft.EntityFrameworkCore;
 using Courier_Management_System.Models;
 using Microsoft.AspNetCore.Http;
 using Courier_Management_System.Data;
+using DataContext = Courier_Management_System.Models.DataContext;
 
 namespace Courier_Management_System.Controllers
 {
     public class ConsignmentController : Controller
     {
-        private readonly DetailsContext _context;
+        private readonly DataContext _context;
         private readonly IHttpContextAccessor _accessor;
 
-        public ConsignmentController(DetailsContext context,IHttpContextAccessor accessor)
+        public ConsignmentController(DataContext context,IHttpContextAccessor accessor)
         {
             _context = context;
             _accessor = accessor;

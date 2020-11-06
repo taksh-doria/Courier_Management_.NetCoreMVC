@@ -1,10 +1,18 @@
 ﻿<Properties StartupConfiguration="{6CF67574-809E-4103-9430-644381BFE929}|Default">
-  <MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench ActiveDocument="Startup.cs">
+    <Files>
+      <File FileName="Startup.cs" Line="34" Column="80" />
+    </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Courier_Management_System" expanded="True">
-            <Node name="Courier_Management_System" expanded="True" />
+            <Node name="Courier_Management_System" expanded="True">
+              <Node name="Controllers" expanded="True" />
+              <Node name="Data" expanded="True" />
+              <Node name="Migrations" expanded="True" />
+              <Node name="Startup.cs" selected="True" />
+            </Node>
           </Node>
         </State>
       </Pad>

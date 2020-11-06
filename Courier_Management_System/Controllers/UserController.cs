@@ -8,14 +8,15 @@ using Microsoft.EntityFrameworkCore;
 using Courier_Management_System.Models;
 using Microsoft.AspNetCore.Http;
 using Courier_Management_System.Data;
+using DataContext = Courier_Management_System.Models.DataContext;
 
 namespace Courier_Management_System.Controllers
 {
     public class UserController : Controller
     {
-        private readonly UserContext _context;
+        private readonly DataContext _context;
         private readonly IHttpContextAccessor _accessor;
-        public UserController(UserContext context, IHttpContextAccessor accessor)
+        public UserController(DataContext context, IHttpContextAccessor accessor)
         {
             _context = context;
             _accessor = accessor;
