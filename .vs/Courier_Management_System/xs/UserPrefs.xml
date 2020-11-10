@@ -1,0 +1,37 @@
+﻿<Properties StartupConfiguration="{E1753674-2A98-4011-8A77-94F331D53010}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Courier_Management_System/Controllers/ConsignmentController.cs">
+    <Files>
+      <File FileName="Courier_Management_System/Controllers/EmployeeController.cs" Line="207" Column="48" />
+      <File FileName="Courier_Management_System/Controllers/CityController.cs" Line="33" Column="48" />
+      <File FileName="Courier_Management_System/Controllers/HomeController.cs" Line="22" Column="37" />
+      <File FileName="Courier_Management_System/Controllers/UserController.cs" Line="18" Column="9" />
+      <File FileName="Courier_Management_System/Controllers/ConsignmentController.cs" Line="51" Column="50" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Courier_Management_System" expanded="True">
+            <Node name="Courier_Management_System" expanded="True">
+              <Node name="Controllers" expanded="True">
+                <Node name="ConsignmentController.cs" selected="True" />
+              </Node>
+              <Node name="Data" expanded="True" />
+              <Node name="Filter" expanded="True" />
+              <Node name="Views" expanded="True">
+                <Node name="Consignment" expanded="True" />
+                <Node name="Employee" expanded="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.Courier__Management__System PreferredExecutionTarget="/Applications/Safari.app" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

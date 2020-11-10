@@ -48,7 +48,7 @@ namespace Courier_Management_System.Controllers
         }
 
         // GET: Consignment/Create
-        public IActionResult Create()
+        public async Task<IActionResult> Create()
         {
             Boolean value=new Utility(this._accessor).IsAuthorisedClient();
             Console.WriteLine("here "+value);
@@ -58,7 +58,12 @@ namespace Courier_Management_System.Controllers
             }
             else
             {
-                return View();
+                IEnumerable<Courier_Management_System.Models.City> cites = await _context.City.ToListAsync();
+                foreach(var item in cites)
+                {
+                    Console.WriteLine("city: " + item.city_name);
+                }
+                return View(await _context.City.ToListAsync());
             }
         }
 

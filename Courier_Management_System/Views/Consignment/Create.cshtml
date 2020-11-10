@@ -1,5 +1,5 @@
 @{ ViewData["Title"] = "Create"; }
-
+@model IEnumerable<Courier_Management_System.Models.City>
 <h1>New Consignment</h1>
 <h4>Consignment Details</h4>
 <hr />
@@ -26,12 +26,10 @@
             <div class="form-group">
                 <label for="destination_city">Destination City:</label>
                 <select name="city" style="max-width: 150px" class="form-control">
-                    <option value="select_city">Select City</option>
-                    <option value="ahmedabad">Ahmedabad</option>
-                    <option value="vadodra">Vadodra</option>
-                    <option value="rajkot">Rajkot</option>
-                    <option value="jamnagar">Jamnagar</option>
-                    <option value="gandhinagar">Gandhinagar</option>
+                    @foreach(var city in Model)
+                    {
+                        <option value="@Html.DisplayFor(modelItem => city.city_name)">@Html.DisplayFor(modelItem => city.city_name)</option>
+                    }
                 </select>
             </div>
             <div class="form-group">

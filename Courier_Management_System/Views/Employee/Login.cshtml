@@ -1,0 +1,36 @@
+﻿@namespace Courier_Management_System.Views.Employee
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+
+<html>
+<head>
+    <link rel="stylesheet" href="~/css/login.css" />
+</head>
+<body>
+    <div class="wrapper fadeInDown">
+        <div id="formContent">
+            <!-- Tabs Titles -->
+            <!-- Icon -->
+            <div class="fadeIn first">
+                <img src="~/􀉭.textClipping" id="icon" alt="User Icon" />
+            </div>
+            <br />
+            <!-- Login Form -->
+            <form asp-action="Login" asp-controller="Employee" method="post">
+                <input type="email" name="email" class="fadeIn fourth" placeholder="Email" style="width: 50%;" />
+                <br />
+                <br />
+                <input type="password" name="password" class="fadeIn fourth" placeholder="Password" style="width: 50%">
+                <br />
+                <input type="submit" class="fadeIn fourth" value="Log In">
+            </form>
+
+            <!-- Remind Passowrd -->
+            <div id="formFooter">
+                <a class="underlineHover" href="#">Forgot Password?</a>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>

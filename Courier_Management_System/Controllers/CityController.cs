@@ -7,46 +7,62 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Courier_Management_System.Models;
 using DataContext = Courier_Management_System.Models.DataContext;
+using Courier_Management_System.Filter;
+using Microsoft.AspNetCore.Http;
+using Courier_Management_System.Data;
 
 namespace Courier_Management_System.Controllers
 {
     public class CityController : Controller
     {
         private readonly DataContext _context;
-
-        public CityController(DataContext context)
+        private readonly IHttpContextAccessor _accessor;
+        public CityController(DataContext context, IHttpContextAccessor accessor)
         {
+            _accessor = accessor;
             _context = context;
         }
 
         // GET: City
         public async Task<IActionResult> Index()
         {
-            return View(await _context.City.ToListAsync());
+            if(new Utility(_accessor).IsAuthorisedAdmin())
+            {
+                return View(await _context.City.ToListAsync());
+            }
+            return Redirect("/Employee/Login");
         }
 
         // GET: City/Details/5
         public async Task<IActionResult> Details(string id)
         {
-            if (id == null)
+            if (new Utility(_accessor).IsAuthorisedAdmin())
             {
-                return NotFound();
-            }
+                if (id == null)
+                {
+                    return NotFound();
+                }
 
-            var city = await _context.City
-                .FirstOrDefaultAsync(m => m.city_name == id);
-            if (city == null)
-            {
-                return NotFound();
-            }
+                var city = await _context.City
+                    .FirstOrDefaultAsync(m => m.city_name == id);
+                if (city == null)
+                {
+                    return NotFound();
+                }
 
-            return View(city);
+                return View(city);
+            }
+            return Redirect("/Employee/Login");
         }
 
         // GET: City/Create
         public IActionResult Create()
         {
-            return View();
+            if (new Utility(_accessor).IsAuthorisedAdmin())
+            {
+                return View();
+            }
+            return Redirect("/Employee/Login");
         }
 
         // POST: City/Create
@@ -56,13 +72,17 @@ namespace Courier_Management_System.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("city_name,State,city_pincode,branch_address")] City city)
         {
-            if (ModelState.IsValid)
+            if (new Utility(_accessor).IsAuthorisedAdmin())
             {
-                _context.Add(city);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                if (ModelState.IsValid)
+                {
+                    _context.Add(city);
+                    await _context.SaveChangesAsync();
+                    return RedirectToAction(nameof(Index));
+                }
+                return View(city);
             }
-            return View(city);
+            return Redirect("/Employee/Login");
         }
 
         // GET: City/Edit/5

@@ -27,6 +27,14 @@ namespace Courier_Management_System.Data
             }
             return false;
         }
+        public Boolean IsAuthorisedAdmin()
+        {
+            if (this._accessor.HttpContext.Session.GetString("logged_in_user") != null && this._accessor.HttpContext.Session.GetString("user_role") == "admin")
+            {
+                return true;
+            }
+            return false;
+        }
     }
 
 }

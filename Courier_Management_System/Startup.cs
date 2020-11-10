@@ -51,6 +51,7 @@ namespace Courier_Management_System
                 app.UseHsts();
             }
             app.UseAuthentication();
+            app.UseAuthorization();
             app.UseSession();
             app.UseHttpsRedirection();
             app.UseStaticFiles();

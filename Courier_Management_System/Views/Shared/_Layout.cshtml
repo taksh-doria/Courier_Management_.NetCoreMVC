@@ -31,8 +31,16 @@
                             @{
                                 if (HttpContextAccessor.HttpContext.Session.GetString("logged_in_user") != null)
                                 {
-                                    <a class="nav-link text-dark" asp-area="" asp-controller="User" asp-action="Profile">@HttpContextAccessor.HttpContext.Session.GetString("logged_in_user")</a>
-                                    <a class="nav-link text-dark" asp-area="" asp-controller="User" asp-action="LogOut">LogOut</a>
+                                    if (HttpContextAccessor.HttpContext.Session.GetString("user_role") == "client")
+                                    {
+                                        <a class="nav-link text-dark" asp-area="" asp-controller="User" asp-action="Profile">@HttpContextAccessor.HttpContext.Session.GetString("logged_in_user")</a>
+                                        <a class="nav-link text-dark" asp-area="" asp-controller="User" asp-action="LogOut">LogOut</a>
+                                    }
+                                    else
+                                    {
+                                        <a class="nav-link text-dark" asp-area="" asp-controller="Employee" asp-action="Index">@HttpContextAccessor.HttpContext.Session.GetString("logged_in_user")</a>
+                                        <a class="nav-link text-dark" asp-area="" asp-controller="User" asp-action="LogOut">LogOut</a>
+                                    }
                                 }
                                 else
                                 {
