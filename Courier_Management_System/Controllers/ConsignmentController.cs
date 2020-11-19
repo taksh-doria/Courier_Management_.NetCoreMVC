@@ -14,6 +14,7 @@ namespace Courier_Management_System.Controllers
 {
     public class ConsignmentController : Controller
     {
+        static int cno = 834482;
         private readonly DataContext _context;
         private readonly IHttpContextAccessor _accessor;
 
@@ -26,24 +27,24 @@ namespace Courier_Management_System.Controllers
         // GET: Consignment
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Consignment_Details.ToListAsync());
+            return View(await _context.Consignment_Details.Where(m=>m.user==_accessor.HttpContext.Session.GetString("logged_in_user")).ToListAsync());
         }
 
         // GET: Consignment/Details/5
         public async Task<IActionResult> Details(long? id)
         {
-            if (id == null)
+            Console.WriteLine("here"+id);
+            if(id==null)
             {
                 return NotFound();
             }
-
             var consignment_Details = await _context.Consignment_Details
-                .FirstOrDefaultAsync(m => m.ID == id);
+                .FirstOrDefaultAsync(m => m.ID==id);
             if (consignment_Details == null)
             {
                 return NotFound();
             }
-
+            Console.WriteLine("found details"+consignment_Details.destination_city);
             return View(consignment_Details);
         }
 
@@ -81,13 +82,24 @@ namespace Courier_Management_System.Controllers
             details.address = address;
             details.package_type = package_type;
             details.pkg_weight_in_grams = pkg_weight_in_grams;
+            cno++;
+            details.consignment_no = cno;
             details.user = _accessor.HttpContext.Session.GetString("logged_in_user");
             details.package_content = package_content;
             details.amount = 600.0F;
+
+            Consignment_Status status = new Consignment_Status();
+            status.consignment_no = details.consignment_no;
+            status.date = details.date;
+            status.user = details.user;
+            status.consignee_name = details.Consignee_name;
+            Console.WriteLine("consignment id: " + details);
             if (ModelState.IsValid)
             {
                 _context.Add(details);
+                _context.Add(status);
                 await _context.SaveChangesAsync();
+
                 return Redirect("/User/Profile");
             }
             else
@@ -178,6 +190,41 @@ namespace Courier_Management_System.Controllers
         private bool Consignment_DetailsExists(long id)
         {
             return _context.Consignment_Details.Any(e => e.ID == id);
+        }
+
+        public async Task<IActionResult> Status()
+        {
+            if (new Utility(_accessor).IsAuthorisedClient())
+            {
+                return View(await _context.Consignment_Status.Where(s=>s.user==_accessor.HttpContext.Session.GetString("logged_in_user")).ToListAsync());
+            }
+            return Redirect("/Employee/Login");
+        }
+
+        public IActionResult UpdateStatus()
+        {
+            if(new Utility(_accessor).IsAuthorisedEmployee())
+            {
+                return View();
+            }
+            else
+            {
+                return Redirect("/Employee/Login");
+            }
+        }
+        [HttpPost]
+        public  async Task<IActionResult> UpdateStatus(string no,string status)
+        {
+            Console.WriteLine(no+"number");
+            
+            var con_status = await _context.Consignment_Status.FirstOrDefaultAsync(m=>m.consignment_no==long.Parse(no));
+            con_status.date = DateTime.Now;
+            con_status.status = status;
+            var city = _context.Employee.FirstOrDefault(m => m.emp_email == _accessor.HttpContext.Session.GetString("logged_in_user"));
+            con_status.current_city = city.emp_city;
+             _context.Consignment_Status.Update(con_status);
+            await _context.SaveChangesAsync();
+            return View();
         }
     }
 }

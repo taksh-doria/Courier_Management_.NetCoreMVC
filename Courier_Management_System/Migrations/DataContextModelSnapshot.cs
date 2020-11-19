@@ -27,7 +27,7 @@ namespace Courier_Management_System.Migrations
                     b.Property<string>("branch_address")
                         .HasColumnType("TEXT");
 
-                    b.Property<short>("city_pincode")
+                    b.Property<long>("city_pincode")
                         .HasColumnType("INTEGER");
 
                     b.HasKey("city_name");
@@ -87,6 +87,9 @@ namespace Courier_Management_System.Migrations
 
                     b.Property<long>("consignment_no")
                         .HasColumnType("INTEGER");
+
+                    b.Property<string>("current_city")
+                        .HasColumnType("TEXT");
 
                     b.Property<DateTime>("date")
                         .HasColumnType("TEXT");

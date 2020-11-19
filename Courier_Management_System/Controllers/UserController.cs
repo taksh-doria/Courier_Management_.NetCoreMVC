@@ -21,9 +21,10 @@ namespace Courier_Management_System.Controllers
             _context = context;
             _accessor = accessor;
         }
-        public IActionResult SignUp()
+        public async Task<IActionResult> SignUp()
         {
-            return View();
+            
+            return View(await _context.City.ToListAsync());
         }
 
         [HttpPost]

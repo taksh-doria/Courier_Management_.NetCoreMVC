@@ -16,6 +16,8 @@ namespace Courier_Management_System.Models
 
         public DateTime date { get; set; }
 
+        public String current_city { get; set; }
+
         public String status { get; set; }
 
     }

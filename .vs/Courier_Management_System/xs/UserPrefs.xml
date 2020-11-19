@@ -1,11 +1,12 @@
 ﻿<Properties StartupConfiguration="{E1753674-2A98-4011-8A77-94F331D53010}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Courier_Management_System/Controllers/ConsignmentController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Courier_Management_System/Controllers/UserController.cs">
     <Files>
-      <File FileName="Courier_Management_System/Controllers/EmployeeController.cs" Line="207" Column="48" />
-      <File FileName="Courier_Management_System/Controllers/CityController.cs" Line="33" Column="48" />
-      <File FileName="Courier_Management_System/Controllers/HomeController.cs" Line="22" Column="37" />
-      <File FileName="Courier_Management_System/Controllers/UserController.cs" Line="18" Column="9" />
-      <File FileName="Courier_Management_System/Controllers/ConsignmentController.cs" Line="51" Column="50" />
+      <File FileName="Courier_Management_System/Views/Shared/_Layout.cshtml" Line="76" Column="18" />
+      <File FileName="Courier_Management_System/Courier_Management_System.csproj" Line="20" Column="33" />
+      <File FileName="Courier_Management_System/Views/Home/Index.cshtml" Line="10" Column="107" />
+      <File FileName="Courier_Management_System/Views/User/SignUp.cshtml" Line="80" Column="143" />
+      <File FileName="Courier_Management_System/Views/Consignment/Create.cshtml" Line="32" Column="22" />
+      <File FileName="Courier_Management_System/Controllers/UserController.cs" Line="30" Column="19" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -13,14 +14,17 @@
           <Node name="Courier_Management_System" expanded="True">
             <Node name="Courier_Management_System" expanded="True">
               <Node name="Controllers" expanded="True">
-                <Node name="ConsignmentController.cs" selected="True" />
+                <Node name="UserController.cs" selected="True" />
               </Node>
-              <Node name="Data" expanded="True" />
-              <Node name="Filter" expanded="True" />
+              <Node name="Models" expanded="True" />
               <Node name="Views" expanded="True">
                 <Node name="Consignment" expanded="True" />
                 <Node name="Employee" expanded="True" />
+                <Node name="Home" expanded="True" />
+                <Node name="Shared" expanded="True" />
+                <Node name="User" expanded="True" />
               </Node>
+              <Node name="wwwroot" expanded="True" />
             </Node>
           </Node>
         </State>

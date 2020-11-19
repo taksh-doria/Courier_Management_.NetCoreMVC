@@ -1,73 +1,188 @@
-﻿@inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
-@using Microsoft.AspNetCore.Http;
+﻿    @inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
+    @using Microsoft.AspNetCore.Http;
 
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>@ViewData["Title"] - Courier_Management_System</title>
-        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-        <link rel="stylesheet" href="~/css/site.css" />
-    </head>
-    <body>
-        <header>
-            <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-                <div class="container">
-                    <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Courier_Management_System</a>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                            aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
-                        <ul class="navbar-nav flex-grow-1">
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                            </li>
-                            </li class="nav-item">
-                            @{
-                                if (HttpContextAccessor.HttpContext.Session.GetString("logged_in_user") != null)
-                                {
-                                    if (HttpContextAccessor.HttpContext.Session.GetString("user_role") == "client")
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+            <title>Home - Lexas</title>
+            <meta name="description" content="An Indian Courier Company">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+            <title>@ViewData["Title"] - Courier_Management_System</title>
+            <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700">
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kaushan+Script">
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic">
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+            <link rel="stylesheet" href="~/css/styles.min.css?h=d260da8d55c51502f0c9b8b13c90b7e2">
+            <style>
+                code {
+                    background: #fff;
+                    padding: 0.2rem;
+                    border-radius: 0.1rem;
+                    text-shadow: none;
+                }
+
+                .demo-text {
+                    text-shadow: 0 1px 1px rgba(0, 0, 0, 1);
+                }
+
+                /*
+*
+* ==========================================
+* CUSTOM UTIL CLASSES
+* ==========================================
+*
+*/
+                .overlay-gradient {
+                    position: relative;
+                }
+
+                    .overlay-gradient::before {
+                        content: '';
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                        bottom: 0;
+                        left: 0;
+                        background: linear-gradient(to bottom, #4FC3F7, #8E24AA);
+                        display: block;
+                        opacity: 0.55;
+                    }
+
+                .overlay-dark {
+                    position: relative;
+                }
+
+                    .overlay-dark::before {
+                        content: '';
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                        bottom: 0;
+                        left: 0;
+                        background: #000;
+                        display: block;
+                        opacity: 0.55;
+                    }
+
+                .overlay-content {
+                    z-index: 99;
+                    position: relative;
+                }
+            </style>
+        </head>
+        <body>
+            <header>
+                <nav class="navbar navbar-dark navbar-expand-lg fixed-top bg-dark" id="mainNav">
+                    <div class="container">
+                        <a class="navbar-brand" href="#page-top">Lexas</a>
+                        <button class="navbar-toggler navbar-toggler-right" data-toggle="collapse" data-target="#navbarResponsive" type="button" data-toogle="collapse" aria-controls="navbarResponsive" aria-expanded="false"
+                                                                                  aria-label="Toggle navigation">
+                            <i class="fa fa-bars"></i>
+                        </button>
+
+                        <div class="collapse navbar-collapse" id="navbarResponsive">
+                            <ul class="nav navbar-nav ml-auto text-uppercase">
+
+                                <li class="nav-item" role="presentation">
+
+                                    <a class="nav-link js-scroll-trigger" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+
+                                </li>
+
+                                <li class="nav-item" role="presentation">
+
+                                    <a class="nav-link js-scroll-trigger" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+
+                                </li>
+
+                                </li class="nav-item" role="presentation">
+
+                                @{
+
+                                    if (HttpContextAccessor.HttpContext.Session.GetString("logged_in_user") != null)
+
                                     {
-                                        <a class="nav-link text-dark" asp-area="" asp-controller="User" asp-action="Profile">@HttpContextAccessor.HttpContext.Session.GetString("logged_in_user")</a>
-                                        <a class="nav-link text-dark" asp-area="" asp-controller="User" asp-action="LogOut">LogOut</a>
+
+                                        if (HttpContextAccessor.HttpContext.Session.GetString("user_role") == "client")
+
+
+                                        {
+
+                                            <a class="nav-link" class="nav-link js-scroll-trigger" asp-area="" asp-controller="User" asp-action="Profile">@HttpContextAccessor.HttpContext.Session.GetString("logged_in_user")</a>
+
+                                            <a class="nav-link" class="nav-link js-scroll-trigger" asp-area="" asp-controller="User" asp-action="LogOut">LogOut</a>
+
+                                            }
+
+                                        else
+
+                                        {
+
+                                            <a class="nav-link js-scroll-trigger" asp-area="" asp-controller="Employee" asp-action="Index">@HttpContextAccessor.HttpContext.Session.GetString("logged_in_user")</a>
+
+                                            <a class="nav-link js-scroll-trigger"  asp-area="" asp-controller="User" asp-action="LogOut">LogOut</a>
+
+                                            }
+
                                     }
+
                                     else
+
                                     {
-                                        <a class="nav-link text-dark" asp-area="" asp-controller="Employee" asp-action="Index">@HttpContextAccessor.HttpContext.Session.GetString("logged_in_user")</a>
-                                        <a class="nav-link text-dark" asp-area="" asp-controller="User" asp-action="LogOut">LogOut</a>
+
+                                        <a class="nav-link js-scroll-trigger" asp-area="" asp-controller="User" asp-action="Login">Login</a>
+
+                                        <a class="nav-link js-scroll-trigger" asp-area="" asp-controller="User" asp-action="SignUp">SignUp</a>
+
+
+                                        }
+
                                     }
-                                }
-                                else
-                                {
-                                    <a class="nav-link text-dark" asp-area="" asp-controller="User" asp-action="Login">Login</a>
-                                    <a class="nav-link text-dark" asp-area="" asp-controller="User" asp-action="SignUp">SignUp</a>
-                                }
-                            }
-                            </li>
-                        </ul>
+
+                                </li>
+
+                            </ul>
+
+                        </div>
+                    </div>
+                </nav>
+            
+            </header>
+            <div class="container">
+                <main role="main" class="pb-3" style="padding-top:50px">
+                    @RenderBody()
+                </main>
+            </div>
+
+            <footer>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-4"><span class="copyright">Copyright&nbsp;© Lexas 2018 devloped by taksh.doria</span></div>
+                        <div class="col-md-4">
+                            <ul class="list-inline social-buttons">
+                                <li class="list-inline-item"><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                <li class="list-inline-item"><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                <li class="list-inline-item"><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="col-md-4">
+                            <ul class="list-inline quicklinks">
+                                <li class="list-inline-item"><a asp-action="Privacy" >Privacy Policy</a></li>
+                                <li class="list-inline-item"><a asp-controller="Employee" asp-action="Login">Employee's Area</a></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
-            </nav>
-        </header>
-        <div class="container">
-            <main role="main" class="pb-3">
-                @RenderBody()
-            </main>
-        </div>
-
-        <footer class="border-top footer text-muted">
-            <div class="container">
-                &copy; 2020 - Courier_Management_System - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-            </div>
-        </footer>
-        <script src="~/lib/jquery/dist/jquery.min.js"></script>
-        <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-        <script src="~/js/site.js" asp-append-version="true"></script>
-        @RenderSection("Scripts", required: false)
-    </body>
-</html>
+            </footer>
+            <script src="~/lib/jquery/dist/jquery.min.js"></script>
+            <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+            <script src="~/js/site.js" asp-append-version="true"></script>
+            @RenderSection("Scripts", required: false)
+        </body>
+    </html>

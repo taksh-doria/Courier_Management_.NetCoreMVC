@@ -28,7 +28,7 @@
                 <select name="city" style="max-width: 150px" class="form-control">
                     @foreach(var city in Model)
                     {
-                        <option value="@Html.DisplayFor(modelItem => city.city_name)">@Html.DisplayFor(modelItem => city.city_name)</option>
+                        <option value="@city.city_name">@Html.DisplayFor(modelItem => city.city_name)</option>
                     }
                 </select>
             </div>

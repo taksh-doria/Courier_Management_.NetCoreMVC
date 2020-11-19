@@ -8,7 +8,7 @@ namespace Courier_Management_System.Models
         public String city_name { get; set; }
 
         public String State { get; set; }
-        public Int16 city_pincode { get; set; }
+        public Int64 city_pincode { get; set; }
         public String branch_address { get; set; }
     }
 }

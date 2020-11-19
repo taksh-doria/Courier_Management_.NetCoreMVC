@@ -1,0 +1,42 @@
+﻿@model IEnumerable<Consignment_Status> 
+@inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
+@using Microsoft.AspNetCore.Http;
+
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Consignment Number</th>
+            <th scope="col">Date</th>
+            <th scope="col">Current City</th>
+            <th scope="col">Consignment Status</th>
+            <th scope="col">Options</th>
+        </tr>
+    </thead>
+    @{
+        if (HttpContextAccessor.HttpContext.Session.GetString("user_role") != null && HttpContextAccessor.HttpContext.Session.GetString("user_role") == "client")
+        {
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.consignment_no)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.date)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.current_city)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.status)
+                    </td>
+                    <td><a class="btn btn-primary" asp-action="Detalils" asp-route-id="@item.consignment_no">View Details</a></td>
+                </tr>
+            }
+        }
+
+    }
+</table>
